@@ -1,1 +1,1 @@
-environment: {{ sls.split('.')[1] }}
+template.sls
