@@ -5,9 +5,9 @@ base:
     - environment.dev
   ##  - auto-update.disabled      # cf. CR00005548
 
-{%- set minion_id = salt['grains.get']('id') %}
-{%- set domain_name = minion_id.partition('.')[2] %}
-{%- if domain_name %}
+##{%- set minion_id = salt['grains.get']('id') %}
+##{%- set domain_name = minion_id.partition('.')[2] %}
+##{%- if domain_name %}
 
   
   ## role assignments
