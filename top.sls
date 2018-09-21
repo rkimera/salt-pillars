@@ -10,6 +10,6 @@ base:
  
 
   ## Finally, assign an optional host-specific Pillar SLS.
-  {{ minion_id|yaml_encode }}:
-    - ignore_missing: True
-- {{ minion_id|lower|yaml_encode }}
+##  {{ minion_id|yaml_encode }}:
+##    - ignore_missing: True
+##- {{ minion_id|lower|yaml_encode }}
