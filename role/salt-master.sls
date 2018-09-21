@@ -53,7 +53,8 @@ salt:
 
     ext_pillar:
       - git:
-          - ssh://git@github.com/rkimera/salt-pillars.git
+##          - ssh://git@github.com/rkimera/salt-pillars.git
+          - https://github.com/rkimera/salt-pillars.git
 
   ##  winrepo_remotes:            # legacy
   ##    - git@github.com:ibrsp/salt-winrepo.git
@@ -80,30 +81,30 @@ salt_formulas:
   list:
     dev: &saltformulas
       - apache-formula
-      - comanage-formula
-      - certbot-formula
-      - docker-formula
-      - epel-formula
+##      - comanage-formula
+##      - certbot-formula
+##      - docker-formula
+##      - epel-formula
       ## TODO
       # - fail2ban-formula
       - firewalld-formula
       - letsencrypt-formula
-      - mysql-formula
-      - ntp-formula
-      - nux-formula
-      - openldap-formula
+  ##    - mysql-formula
+  ##    - ntp-formula
+  ##    - nux-formula
+  ##    - openldap-formula
       - openssh-formula
-      - php-formula
-      - pip-formula
+  ##    - php-formula
+  ##    - pip-formula
       ## TODO
       # - postfix-formula
-      - postgres-formula
+  ##    - postgres-formula
       - salt-formula
-      - shibboleth-formula
-      - snmp-formula
-      - sudoers-formula
-      - tomcat-formula
-      - users-formula
+  ##    - shibboleth-formula
+  ##    - snmp-formula
+  ##    - sudoers-formula
+  ##    - tomcat-formula
+  ##    - users-formula
   ##  production: *saltformulas
   ##  satosa_wsgi: *saltformulas
 
