@@ -1,7 +1,7 @@
 base:
   ## default settings
   '*':
-    - defaults
+  ##  - defaults
     - environment.dev
   ##  - auto-update.disabled      # cf. CR00005548
 
