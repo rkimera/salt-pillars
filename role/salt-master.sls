@@ -115,24 +115,24 @@ salt_formulas:
 ### The salt-master service runs as the root user by default.  This
 ### configures SSH public key authentication for use with GitHub.
 
-##users:
-## root:
-##    ssh_keys_pillar:
-##      ibrsp-production-salt-master-dsa-key-20150306: users_root_ssh_keys
- ##   ssh_config:
- ##     github:
- ##       hostname: github.com
- ##       options:
- ##         - IdentityFile ~/.ssh/ibrsp-production-salt-master-dsa-key-20150306
- ##         - StrictHostKeyChecking no
+users:
+ root:
+    ssh_keys_pillar:
+      id_rsa: users_root_ssh_keys
+    ssh_config:
+      github:
+        hostname: github.com
+        options:
+          - IdentityFile ~/.ssh/id_rsa
+          - StrictHostKeyChecking no
 
-##{%- import_text "role/salt-master-github.pub" as salt_master_github_pub %}
-##{%- import_text "role/salt-master-github.key" as salt_master_github_key %}
+{%- import_text "role/salt-master-github.pub" as salt_master_github_pub %}
+{%- import_text "role/salt-master-github.key" as salt_master_github_key %}
 
-##users_root_ssh_keys:
-##  ibrsp-production-salt-master-dsa-key-20150306:
- ##   pubkey: {{ salt_master_github_pub|yaml_encode }}
- ##   privkey: {{ salt_master_github_key|yaml_encode }} 
+users_root_ssh_keys:
+  id_rsa:
+    pubkey: {{ salt_master_github_pub|yaml_encode }}
+    privkey: {{ salt_master_github_key|yaml_encode }} 
 
 ###
 #### CERTBOT-FORMULA
