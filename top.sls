@@ -1,6 +1,5 @@
 base:
   '*':
-    - defaults
     - environment.dev
 
 
