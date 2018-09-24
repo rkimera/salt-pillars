@@ -1,12 +1,13 @@
 base:
   '*':
-    - environment.dev
+    - defaults
+ ##   - environment.dev
 
 
   ## role assignments
-  'E@(?i)ip-172-31-26-84.us-west-2.compute.internal':  [role.salt-master]
-  'E@(?i)ip-172-31-23-195':     [role.aceug]
-  'E@(?i)ip-172-31-28-38.us-west-2.compute.internal': [role.network-tools]
+  ##'E@(?i)ip-172-31-26-84.us-west-2.compute.internal':  [role.salt-master]
+  ##'E@(?i)ip-172-31-23-195':     [role.aceug]
+  ##'E@(?i)ip-172-31-28-38.us-west-2.compute.internal': [role.network-tools]
 
  
 
