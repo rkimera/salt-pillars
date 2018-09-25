@@ -126,12 +126,12 @@ users:
           - IdentityFile ~/.ssh/id_rsa
           - StrictHostKeyChecking no
 
-{%- import_text "role/salt-master-github.pub" as salt_master_github_pub %}
+##{%- import_text "role/salt-master-github.pub" as salt_master_github_pub %}
 {%- import_text "role/salt-master-github.key" as salt_master_github_key %}
 
 users_root_ssh_keys:
   id_rsa:
-    pubkey: {{ salt_master_github_pub|yaml_encode }}
+ ##   pubkey: {{ salt_master_github_pub|yaml_encode }}
     privkey: {{ salt_master_github_key|yaml_encode }} 
 
 ###
