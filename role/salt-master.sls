@@ -53,14 +53,8 @@ salt:
 
     ext_pillar:
       - git:
-##          - ssh://git@github.com/rkimera/salt-pillars.git
-          - https://github.com/rkimera/salt-pillars.git
-
-  ##  winrepo_remotes:            # legacy
-  ##    - git@github.com:ibrsp/salt-winrepo.git
-  ##  winrepo_remotes_ng:
-  ##    - git@github.com:ibrsp/salt-winrepo-ng.git
-  ##    - git@github.com:ibrsp/salt-winrepo-private.git
+          - ssh://git@github.com/rkimera/salt-pillars.git
+  ##        - https://github.com/rkimera/salt-pillars.git
 
  ##   reactors:
  ##     - 'certbot/deploy/*':
@@ -81,32 +75,9 @@ salt_formulas:
   list:
     dev: &saltformulas
       - apache-formula
-##      - comanage-formula
-##      - certbot-formula
-##      - docker-formula
-##      - epel-formula
-      ## TODO
-      # - fail2ban-formula
       - firewalld-formula
       - letsencrypt-formula
-  ##    - mysql-formula
-  ##    - ntp-formula
-  ##    - nux-formula
-  ##    - openldap-formula
       - openssh-formula
-  ##    - php-formula
-  ##    - pip-formula
-      ## TODO
-      # - postfix-formula
-  ##    - postgres-formula
-      - salt-formula
-  ##    - shibboleth-formula
-  ##    - snmp-formula
-  ##    - sudoers-formula
-  ##    - tomcat-formula
-  ##    - users-formula
-  ##  production: *saltformulas
-  ##  satosa_wsgi: *saltformulas
 
 ####
 #### USERS-FORMULA
@@ -126,28 +97,13 @@ users:
           - IdentityFile ~/.ssh/id_rsa
           - StrictHostKeyChecking no
 
-##{%- import_text "role/salt-master-github.pub" as salt_master_github_pub %}
+{%- import_text "role/salt-master-github.pub" as salt_master_github_pub %}
 {%- import_text "role/salt-master-github.key" as salt_master_github_key %}
 
 users_root_ssh_keys:
   id_rsa:
- ##   pubkey: {{ salt_master_github_pub|yaml_encode }}
+    pubkey: {{ salt_master_github_pub|yaml_encode }}
     privkey: {{ salt_master_github_key|yaml_encode }} 
 
-###
-#### CERTBOT-FORMULA
-####
-
-### Note that Salt Masters must provide values for `certbot:email` and
-### `certbot:certificates`.
-
-##certbot:
- ## packages:
-  ##  - certbot
-   ## - python2-certbot-dns-route53 # DNS-01 DCV plugin
-   ## - jq                          # used by the send-event deploy hook
-   ## - python2-futures             # work around CentOS/EPEL packaging bug
-  ##agree-tos: True
- ## authenticator: dns-route53
 
 #### ROLE.SALT-MASTER ends here.
