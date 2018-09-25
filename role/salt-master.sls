@@ -40,9 +40,9 @@ salt:
     file_roots:
       base:
         - /srv/salt
-      dev:
+      development:
         - /srv/salt             # hack to make winrepo work
-      prod:
+      production:
         - /srv/salt             # hack to make winrepo work
 
     ext_pillar:
@@ -62,7 +62,7 @@ salt_formulas:
       baseurl: git@github.com:rkimera
       update: True
   list:
-    dev: &saltformulas
+    development: &saltformulas
       - apache-formula
       - firewalld-formula
       - letsencrypt-formula
