@@ -1,6 +1,5 @@
 base:
   '*':
-    - environment.base
     - users
    
 {% set id = salt['grains.get']('id', '') %}
