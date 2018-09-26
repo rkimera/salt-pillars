@@ -1,6 +1,7 @@
 base:
   '*':
     - users
+  '*users*'
   {% set role = salt['grains.get']('role',[]) -%} 
   {% for role in role -%} 
   'roles:{{ role }}':
