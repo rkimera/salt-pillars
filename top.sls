@@ -16,3 +16,4 @@ base:
     - role.users
 
 {%- if 'users' in pillar['role'] %}
+{%- endif %}
