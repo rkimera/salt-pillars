@@ -1,7 +1,6 @@
 users:
   rodgers:
     fullname: Rodgers
-    uid: 1010
     shell: /bin/bash
     home: /home/rodgers
     password: Kimrods@123
