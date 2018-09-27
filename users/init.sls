@@ -35,8 +35,8 @@ users_{{name}}_user:
 users_ssh_auth_{{name}}_{{loop.index0 }}:
   ssh_auth.present:
     - user: {{ name }}
-    - name: {{auth }}
+    - name: {{ auth }}
 {% endfor %}
 {% endif %}
 
-{% endfor %}
+#{% endfor %}
