@@ -39,7 +39,4 @@ users_ssh_auth_{{name}}_{{loop.index0 }}:
 {% endfor %}
 {% endif %}
 
-{% if user_files.enabled %}
-{% endif %} 
-
 {% endfor %}
